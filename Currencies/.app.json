@@ -4,13 +4,32 @@
     {
       "type": "kendo-ui-mobile:view",
       "name": "home",
-      "components": [],
+      "components": [
+        {
+          "type": "kendo-ui-mobile:list",
+          "name": "homeModel",
+          "dataProvider": "currenciesDataProvider",
+          "collection": "",
+          "headerField": "source",
+          "masterDetails": false,
+          "pullToRefresh": false,
+          "endlessScroll": false
+        }
+      ],
       "title": "Home View",
       "addToNavigation": true,
       "icon": "home"
     }
   ],
-  "dataProviders": [],
+  "dataProviders": [
+    {
+      "type": "kendo-ui-mobile:dataProvider",
+      "name": "currenciesDataProvider",
+      "title": "Currencies",
+      "source": "json",
+      "url": "http://www.apilayer.net/api/historical?access_key=940541b46b4603ca3e5d5640bc110257&date=2016-02-02&currencies=USD,CHF,EUR"
+    }
+  ],
   "name": "kendoUiMobileApp",
   "navigation": "tabstrip",
   "view": "home",
